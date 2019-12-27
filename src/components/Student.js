@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
+import "./Components.css";
 
 class Student extends Component {
   render() {
     return (
       <Route>
         <div className="row">
-          <div className="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+          
+          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 margin-search">
             {/* student */}
             {/* Search */}
             <div className="input-group margin-table">
@@ -25,22 +27,33 @@ class Student extends Component {
               </span>
             </div>
           </div>
+          <br/>
+          <br/>
+
+
+
 
           {/* New Student Button*/}
 
-          <Link to="/student/new" type="button" className="btn btn-success">
+
+     <div className="row">
+         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+         <Link to="/student/new" type="button" className="btn btn-success">
             New Student
           </Link>
+         </div>
+     </div>
+     
 
           <table className="table table-hover">
             <thead>
-              <tr>
-                <th>#</th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Addess</th>
-                <th>Action</th>
+              <tr className="text-style">
+                <td>#</td>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Addess</td>
+                <td>Action</td>
               </tr>
             </thead>
             <tbody>{this.props.children}</tbody>
@@ -48,7 +61,7 @@ class Student extends Component {
         </div>
       </Route>
     );
-  }
+  } 
 }
 
 export default Student;
